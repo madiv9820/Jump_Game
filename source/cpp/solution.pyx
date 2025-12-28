@@ -30,16 +30,16 @@ cdef extern from "solution.hpp":
         bint canJump(vector[int]& nums)
 
 cdef class cppSolution:
-"""
-    🔌 Python-facing wrapper for the C++ Solution class
+# ============================================================
+    # 🔌 Python-facing wrapper for the C++ Solution class
 
-    Responsibilities:
-    - Manage lifetime of the underlying C++ object
-    - Translate Python data structures to C++ equivalents
-    - Expose a clean, Pythonic API for testing and usage
+    # Responsibilities:
+    # - Manage lifetime of the underlying C++ object
+    # - Translate Python data structures to C++ equivalents
+    # - Expose a clean, Pythonic API for testing and usage
 
-    ⚠️ No algorithmic logic should be added here
-"""
+    # ⚠️ No algorithmic logic should be added here
+# ============================================================
     cdef Solution *thisPtr
     def __cinit__(self): self.thisPtr = new Solution()
     def __dealloc__(self): del self.thisPtr
