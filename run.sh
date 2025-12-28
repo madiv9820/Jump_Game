@@ -34,7 +34,8 @@ fi
 # ⚙️ Build C++ Extension (Independent)
 # ------------------------------------------------------------
 echo "⚙️ Building C++ extension..."
-if cd ./source/cpp && python setup.py build_ext --inplace; then
+cd ./source/cpp 
+if python setup.py build_ext --inplace; then
     echo "✅ C++ extension built!"
 else
     echo "❌ C++ build FAILED 🧨"
