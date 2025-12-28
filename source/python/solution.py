@@ -31,6 +31,11 @@ class pySolution:
                 # 🔗 Update current state
                 # If ANY jump can reach the end, current position is valid
                 isPossible[currentPosition] |= nextResult
+                
+                # ✂️ Early pruning: stop checking further jumps
+                # if we already can reach the end
+                if isPossible[currentPosition]:
+                    break
 
         # 🚀 Final answer
         # Can we reach the last index starting from index 0?

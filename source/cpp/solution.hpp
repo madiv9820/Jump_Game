@@ -34,6 +34,11 @@ public:
                 // If ANY jump can reach the end, mark this index as reachable
                 isPossible[currentPosition] =
                     isPossible[currentPosition] | nextResult;
+                
+                // ✂️ Early pruning: stop checking further jumps 
+                // if we already can reach the end
+                if(isPossible[currentPosition])
+                    break;
             }
         }
 
